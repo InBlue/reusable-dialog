@@ -19,15 +19,21 @@
 	</script>
 	<body>
 		<dialog id="modal" class="">
-			<h1 id="modal-title"></h1>
+			<h2 id="modal-title"></h2>
 			<div class="modal-buttons">
-				<button onclick="closeDialog('Yes');">Yes</button>
-				<button onclick="closeDialog('Cancel');">Cancel</button>
+				<button onclick="closeDialog('Yes');" class="button">
+					Yes
+				</button>
+				<button onclick="closeDialog('Cancel');" class="button">
+					Cancel
+				</button>
 			</div>
 		</dialog>
-		<button onclick="openDialog('Crazy cool dialog')">Click me!</button>
+		<button onclick="openDialog('Crazy cool dialog')" class="main button">
+			Click me!
+		</button>
 		<p id="status">
-			You pressed the '<span id="modal-response"></span>' button!
+			You pressed the "<span id="modal-response"></span>"" button!
 		</p>
 	</body>
 </html>

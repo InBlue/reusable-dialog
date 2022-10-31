@@ -1,5 +1,19 @@
-* {
-	font-family: sans-serif;
+/* Import external font faces, purely for styling */
+@import url(https://fonts.bunny.net/css?family=inter:400,500|plus-jakarta-sans:700);
+
+*:not(dialog) {
+	margin: 0;
+	padding: 0;
+	font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
@@ -7,7 +21,53 @@ body {
 	margin: 5vh 3vw;
 }
 
+dialog {
+	padding: 3em;
+	border: 0;
+	border-radius: 8px;
+	text-align: center;
+}
+
+dialog::backdrop {
+	backdrop-filter: blur(1px);
+	background-color: rgba(28, 33, 39, 0.425);
+}
+
+.modal-buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2em; /* Move buttons closer together */
+	margin-top: 0.5em; /* Add space between buttons and title */
+}
+
+.button {
+	border: 0;
+	outline: 0;
+	padding: 0.5em 1em;
+
+	border-radius: 5px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.main.button {
+	font-size: 14px;
+	font-weight: 400;
+	background-color: #4c6baf;
+	color: white;
+
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.main.button:hover {
+	box-shadow: 0px 4px 12px rgba(77, 108, 176, 0.314);
+}
+
 /* Hide status string be default */
 #status {
 	display: none;
+	margin-top: 1em;
 }
