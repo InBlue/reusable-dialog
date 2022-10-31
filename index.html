@@ -7,10 +7,21 @@
 		<link rel="stylesheet" href="styles/main.css" />
 	</head>
 	<script>
-		function openDialog(title) {
+		/*
+            @param {string} title - The title to display in the dialog
+            @param {string} affirm - Text to display on the affirmative button press
+            @param {string} negate - Text to display on cancel button press
+        */
+		function openDialog(title, affirm, negate) {
 			document.getElementById('modal-title').innerHTML = title;
+			document.getElementById('affirm').innerHTML = affirm;
+			document.getElementById('negate').innerHTML = negate;
 			document.getElementById('modal').showModal();
 		}
+
+		/*
+            @param {string} response - The response from the dialog
+        */
 		function closeDialog(response) {
 			document.getElementById('modal').close();
 			document.getElementById('modal-response').innerHTML = response;
@@ -18,22 +29,42 @@
 		}
 	</script>
 	<body>
-		<dialog id="modal" class="">
+		<dialog id="modal">
 			<h2 id="modal-title"></h2>
 			<div class="modal-buttons">
-				<button onclick="closeDialog('Yes');" class="button">
-					Yes
-				</button>
-				<button onclick="closeDialog('Cancel');" class="button">
-					Cancel
-				</button>
+				<button
+					onclick="closeDialog(this.innerText);"
+					class="button"
+					id="affirm"
+				></button>
+				<button
+					onclick="closeDialog(this.innerText);"
+					class="button"
+					id="negate"
+				></button>
 			</div>
 		</dialog>
-		<button onclick="openDialog('Crazy cool dialog')" class="main button">
+
+		<button
+			onclick="openDialog('Crazy cool dialog', 'Yes', 'Cancel')"
+			class="main button"
+		>
 			Click me!
 		</button>
+		<button
+			onclick="openDialog('This has a Different Title.', 'Continue', 'Cancel')"
+			class="main button"
+		>
+			A Second Button
+		</button>
+		<button
+			onclick="openDialog('Only one Element is being used!', 'Yep!', 'No')"
+			class="main button"
+		>
+			Need a third?
+		</button>
 		<p id="status">
-			You pressed the "<span id="modal-response"></span>"" button!
+			You pressed the "<span id="modal-response"></span>" button!
 		</p>
 	</body>
 </html>
