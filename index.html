@@ -9,10 +9,10 @@
 	<script>
 		/*
             @param {string} title - The title to display in the dialog
-            @param {string} affirm - Text to display on the affirmative button press
-            @param {string} negate - Text to display on cancel button press
+            @param {string} [affirm=Yes] - Text to display on the affirmative button press
+            @param {string} [negate=Cancel] - Text to display on cancel button press
         */
-		function openDialog(title, affirm, negate) {
+		function openDialog(title, affirm = 'Yes', negate = 'Cancel') {
 			document.getElementById('modal-title').innerHTML = title;
 			document.getElementById('affirm').innerHTML = affirm;
 			document.getElementById('negate').innerHTML = negate;
