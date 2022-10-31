@@ -1,0 +1,33 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Reusable Dialog Example</title>
+		<link rel="stylesheet" href="styles/main.css" />
+	</head>
+	<script>
+		function openDialog(title) {
+			document.getElementById('modal-title').innerHTML = title;
+			document.getElementById('modal').showModal();
+		}
+		function closeDialog(response) {
+			document.getElementById('modal').close();
+			document.getElementById('modal-response').innerHTML = response;
+			document.getElementById('status').style.display = 'block';
+		}
+	</script>
+	<body>
+		<dialog id="modal" class="">
+			<h1 id="modal-title"></h1>
+			<div class="modal-buttons">
+				<button onclick="closeDialog('Yes');">Yes</button>
+				<button onclick="closeDialog('Cancel');">Cancel</button>
+			</div>
+		</dialog>
+		<button onclick="openDialog('Crazy cool dialog')">Click me!</button>
+		<p id="status">
+			You pressed the '<span id="modal-response"></span>' button!
+		</p>
+	</body>
+</html>

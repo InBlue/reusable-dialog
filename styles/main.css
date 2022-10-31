@@ -1,0 +1,13 @@
+* {
+	font-family: sans-serif;
+}
+
+body {
+	padding: 0;
+	margin: 5vh 3vw;
+}
+
+/* Hide status string be default */
+#status {
+	display: none;
+}
