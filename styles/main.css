@@ -37,8 +37,8 @@ dialog::backdrop {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 2em; /* Move buttons closer together */
-	margin-top: 0.5em; /* Add space between buttons and title */
+	width: 150px;
+	margin: 0.7em auto 0 auto;
 }
 
 .button {
